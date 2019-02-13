@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<project name="build_client_stubs" default="build_client_stubs">
+	<property environment="env" />
+	<property name="PROJECT_NAME" value="caisi_integrator" />
+	<property name="GENERATED_CLIENT_STUB_SOURCES" value="../target/client_stubs" />
+	<property name="GENERATED_CLIENT_STUB_CLASSES" value="../target/client_stubs_classes" />
+	<property name="GENERATED_JAR" value="../target/${PROJECT_NAME}_client_stubs.jar" />
+	<property name="EXAMPLE_CLIENT_SOURCES" value="../src/examples/java" />
+	<property name="EXAMPLE_CLIENT_CLASSES" value="../target/example_classes" />
+	
+	<fileset id="lib_jars" dir="../target/${PROJECT_NAME}-0.0-SNAPSHOT/WEB-INF/lib">
+		<include name="*.jar" />
+		<exclude name="hnr_client.jar"/>
+	</fileset>
+
+	<target name="build_client_stubs">
+		<mkdir dir="${GENERATED_CLIENT_STUB_SOURCES}" />
+		<mkdir dir="${GENERATED_CLIENT_STUB_CLASSES}" />
+
+		<java classname="org.apache.cxf.tools.wsdlto.WSDLToJava" fork="true">
+			<classpath>
+				<fileset refid="lib_jars" />
+				<pathelement location="../target/${PROJECT_NAME}-0.0-SNAPSHOT/WEB-INF/classes"/>
+			</classpath>
+
+			<arg value="-verbose" />
+			<arg value="-client" />
+			<arg value="-b" />
+			<arg value="binding_customisation.xml" />
+			<arg value="-d" />
+			<arg value="${GENERATED_CLIENT_STUB_SOURCES}" />
+			<arg value="-wsdlList" />
+			<arg value="http://127.0.0.1:8085/${PROJECT_NAME}/ws?formatted=false&amp;wsdlList=true" />
+		</java>
+		
+		<javac target="1.5" srcdir="${GENERATED_CLIENT_STUB_SOURCES}" destdir="${GENERATED_CLIENT_STUB_CLASSES}">
+			<classpath>
+				<fileset refid="lib_jars" />
+			</classpath>
+		</javac>
+
+		<jar destfile="${GENERATED_JAR}" basedir="${GENERATED_CLIENT_STUB_CLASSES}" />
+	</target>
+	
+	<target name="run_test_client" depends="build_client_stubs">
+		<mkdir dir="${EXAMPLE_CLIENT_CLASSES}" />
+		
+		<!-- build the client class files -->
+		<javac srcdir="${EXAMPLE_CLIENT_SOURCES}" destdir="${EXAMPLE_CLIENT_CLASSES}">
+			<classpath>
+				<fileset refid="lib_jars" />
+				<pathelement location="${GENERATED_CLIENT_STUB_CLASSES}" />
+				<pathelement location="../target/caisi_integrator-0.0-SNAPSHOT/WEB-INF/classes" />
+			</classpath>
+		</javac>
+
+		<!-- run the hello world test -->
+		<java classname="org.oscarehr.caisi_integrator.ws.client_tests.HelloWorldTestClient" fork="true">
+			<classpath>
+				<fileset refid="lib_jars" />
+				<pathelement location="${GENERATED_CLIENT_STUB_CLASSES}" />
+				<pathelement location="${EXAMPLE_CLIENT_CLASSES}" />
+				<pathelement location="../target/test-classes" />
+				<pathelement location="../target/caisi_integrator-0.0-SNAPSHOT/WEB-INF/classes" />
+			</classpath>
+
+			<arg value="-Dorg.apache.cxf.Logger=org.apache.cxf.common.logging.Log4jLogger" />
+		</java>
+
+		<!-- run the client test -->
+		<java classname="org.oscarehr.caisi_integrator.ws.client_tests.FacilityTestClient" fork="true">
+			<classpath>
+				<fileset refid="lib_jars" />
+				<pathelement location="${GENERATED_CLIENT_STUB_CLASSES}" />
+				<pathelement location="${EXAMPLE_CLIENT_CLASSES}" />
+				<pathelement location="../target/test-classes" />
+				<pathelement location="../target/caisi_integrator-0.0-SNAPSHOT/WEB-INF/classes" />
+			</classpath>
+
+			<arg value="-Dorg.apache.cxf.Logger=org.apache.cxf.common.logging.Log4jLogger" />
+		</java>
+	</target>
+</project>
+

@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="5.0">
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/ws/GetConsentTransfer.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/ws/MatchingDemographicParameters.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/ws/FacilityWs.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/ws/ProgramWs.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/ws/MatchingDemographicTransferScore.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/ws/HnrWs.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/ws/PhiFilter.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/ws/DemographicWs.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/ws/DemographicTransfer.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/ws/SetConsentTransfer.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/ws/HelloWorldWs.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/ws/AbstractWs.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/ws/OscarUsernameTokenValidator.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/ws/ProviderWs.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/ws/ReferralWs.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/ws/ProviderTransfer.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/ws/AuthenticationInWSS4JInterceptor.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/ws/ProviderCommunicationTransfer.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/CachedEformValueDao.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/CachedDemographicDocument.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/CachedDxresearch.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/CachedDemographicDocumentContents.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/CachedDemographicImage.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/CachedMeasurementMap.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/CachedDemographicLabResult.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/schema/InitialiseDataStore.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/schema/upgrade_patches/UpgradeFrom0To1.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/schema/upgrade_patches/package-info.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/schema/UpgradePatchInterface.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/schema/SchemaUpgradeManager.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/schema/SchemaUtils.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/CachedMeasurementExt.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/CachedDxresearchDao.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/CachedBillingOnItemDao.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/CachedMeasurementDao.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/CachedProgram.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/CachedDemographicNoteDao.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/AbstractModel.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/Facility.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/CachedDemographicDocumentContentsDao.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/CachedDemographicPreventionDao.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/IssueGroupDao.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/CachedProgramDao.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/FacilityDao.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/SystemPropertiesDao.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/CachedDemographicAllergyDao.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/CachedDemographicPrevention.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/AbstractDao.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/CachedDemographicLabResultDao.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/CachedDemographicConsent.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/CachedAdmissionDao.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/CachedAppointment.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/CachedDemographicImageDao.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/CachedProvider.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/CachedDemographicDrugDao.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/CachedDemographicFormDao.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/CachedEformDataDao.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/DemographicLink.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/DemographicPushDate.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/CachedMeasurementMapDao.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/CachedDemographicNoteCompositePk.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/CachedDemographicConsentDao.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/NoteIssue.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/HomelessPopulationReport.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/CachedMeasurementExtDao.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/IssueGroup.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/CachedFacilityDao.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/CachedAdmission.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/SiteUser.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/CachedEformValue.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/CachedDemographicAllergy.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/ProviderCommunication.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/CachedDemographicDrug.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/Referral.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/CachedDemographicIssueDao.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/EventLog.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/FacilityIdStringCompositePk.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/FacilityIdDemographicIssueCompositePk.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/SystemProperties.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/CachedFacility.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/DemographicLinkDao.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/FacilityIdIntegerCompositePk.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/FacilityIdLabResultCompositePk.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/EventLogDao.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/CachedDemographicForm.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/CachedDemographic.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/CachedDemographicDocumentDao.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/CachedDemographicIssue.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/CachedProviderDao.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/ReferralDao.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/CachedMeasurementTypeDao.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/MatchingCachedDemographicScore.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/SiteUserDao.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/CachedMeasurementType.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/CachedDemographicNote.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/CachedEformData.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/HomelessPopulationReportDao.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/CachedDemographicDao.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/CachedMeasurement.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/CachedAppointmentDao.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/DemographicPushDateDao.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/CachedBillingOnItem.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/dao/ProviderCommunicationDao.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/util/Named.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/util/VmStat.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/util/CxfClientUtils.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/util/ConfigXmlUtils.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/util/HomelessPopulationReportGeneratorTimerTask.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/util/AdditionalSchemaGenerationSql.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/util/StateProvinceTerritoryUtils.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/util/IssueCodeRoleUtils.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/util/IntegratorGZIPOutInterceptor.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/util/FacilityUpdateInInterceptor.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/util/Role.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/util/MethodTimerInterceptor.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/util/ContextStartupListener.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/util/Log4JGmailExecutorTask.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/util/JpaUtils.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/util/LoggedInInfoWebService.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/util/ImageIoUtils.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/util/EncryptionUtils.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/util/IntegratorGZIPFeature.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/util/RandomString.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/util/MiscUtils.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/util/QueueCache.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/util/ConsentDomainUtil.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/util/SpringPropertyConfigurer.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/util/LoggedInInfo.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/util/LoggedInInfoInternalThread.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/util/SpringJpaMappingToolTask.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/util/LoggedInInfoWebSite.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/util/SpringUtils.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/util/LoggingPcEnhancerTask.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/util/IntegratorGZIPInInterceptor.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/util/Log4JGmailErrorAppender.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/util/LoggedInInfoClearingFilter.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/util/CodeType.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/util/XmlUtils.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/util/AuthenticationOutWSS4JInterceptor.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/util/AccumulatorMap.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/exception/CaisiException.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/exception/IntegrationException.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/site/utils/SiteSecurityFilter.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/site/utils/SiteSecurity.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/site/utils/ReCaptchaUtils.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/site/utils/JsfUtils.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/site/utils/HideLessThan5Converter.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/site/utils/ResponseDefaultsChangeDetectingWrapper.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/site/utils/ResponseDefaultsFilter.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/site/utils/LocalDateTimeConverter.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/site/utils/LocalDateConverter.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/site/ui/LoginJsfBean.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/site/ui/SimpleDateComponentBean.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/site/ui/admin/ViewSiteUsersJsfBean.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/site/ui/admin/CreateUpdateSiteUserJsfBean.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/site/ui/admin/CreateUpdateFacilityJsfBean.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/site/ui/admin/ViewFacilitiesJsfBean.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/site/ui/admin/DatabaseUpgradeJsfBean.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/site/ui/reports/ViewAllLogsJsfBean.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/site/ui/reports/AllYearsPopulationAverages.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/site/ui/reports/HomelessPopulationReportResultsJsfBean.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/site/ui/reports/HomelessPopulationReportConfigurationJsfBean.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/site/ui/reports/IssueReportJsfBean.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/site/ui/reports/RenderAllYearsPopulationGraphs.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/site/ui/reports/HomelessPopulationReportSummaryJsfBean.java">
+</file>
+<file name="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/site/ui/SummaryJsfBean.java">
+</file>
+</checkstyle>

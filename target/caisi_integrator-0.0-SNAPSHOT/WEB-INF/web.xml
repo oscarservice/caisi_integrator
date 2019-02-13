@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:spring_common.xml, classpath:spring_dao.xml, classpath:spring_ws.xml</param-value>
+	</context-param>
+
+	<context-param>
+	  <param-name>javax.faces.PROJECT_STAGE</param-name>
+	  <param-value>Development</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>javax.faces.FACELETS_LIBRARIES</param-name>
+		<param-value>/WEB-INF/caisi.taglib.xml</param-value>
+	</context-param>
+
+	<!-- filters -->	
+    <filter>
+        <filter-name>ResponseDefaultsFilter</filter-name>
+        <filter-class>org.oscarehr.caisi_integrator.site.utils.ResponseDefaultsFilter</filter-class>
+    </filter>
+    
+	<filter>
+		<filter-name>LoggedInInfoClearingFilter</filter-name>
+		<filter-class>org.oscarehr.caisi_integrator.util.LoggedInInfoClearingFilter</filter-class>
+	</filter>
+
+	<filter>
+		<filter-name>SiteSecurityFilter</filter-name>
+		<filter-class>org.oscarehr.caisi_integrator.site.utils.SiteSecurityFilter</filter-class>
+	</filter>
+
+    <filter-mapping>
+		<filter-name>ResponseDefaultsFilter</filter-name>
+		<url-pattern>/site/*</url-pattern>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>LoggedInInfoClearingFilter</filter-name>
+		<url-pattern>/ws/*</url-pattern>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>SiteSecurityFilter</filter-name>
+		<url-pattern>/site/*</url-pattern>
+	</filter-mapping>
+
+	<!-- Listeners -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>org.oscarehr.caisi_integrator.util.ContextStartupListener</listener-class>
+	</listener>
+
+	<!-- Servlets -->
+	<servlet>
+		<servlet-name>Faces Servlet</servlet-name>
+		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>CXFServlet</servlet-name>
+		<servlet-class>org.apache.cxf.transport.servlet.CXFServlet</servlet-class>
+	</servlet>
+
+	<!-- Servlet Mappings -->
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>*.jsf</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>CXFServlet</servlet-name>
+		<url-pattern>/ws/*</url-pattern>
+	</servlet-mapping>
+</web-app>

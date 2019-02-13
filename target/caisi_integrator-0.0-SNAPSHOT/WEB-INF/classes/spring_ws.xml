@@ -1,0 +1,65 @@
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:cxf="http://cxf.apache.org/core"
+	xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans	http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+		http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd
+		http://cxf.apache.org/jaxws	http://cxf.apache.org/schemas/jaxws.xsd
+	">
+
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
+
+	<bean class="org.oscarehr.caisi_integrator.util.SpringPropertyConfigurer" />
+
+	<!-- security interceptor -->
+    <cxf:bus>
+        <cxf:inInterceptors>
+        	<bean class="org.oscarehr.caisi_integrator.util.IntegratorGZIPInInterceptor"/>
+
+			<bean class="org.oscarehr.caisi_integrator.ws.AuthenticationInWSS4JInterceptor">
+				<property name="excludes">
+					<list>
+						<value>/HelloWorldService</value>
+					</list>
+				</property>
+			</bean>
+			<bean class="org.oscarehr.caisi_integrator.util.FacilityUpdateInInterceptor"/>
+        </cxf:inInterceptors>
+        <cxf:outInterceptors>
+      	  <bean class="org.oscarehr.caisi_integrator.util.IntegratorGZIPOutInterceptor"/>
+        </cxf:outInterceptors>
+        <cxf:properties>
+        	<entry key="ws-security.ut.validator" value="org.oscarehr.caisi_integrator.ws.OscarUsernameTokenValidator" />
+        </cxf:properties>
+        <cxf:features>
+        	<bean id="compressGZIPFeature" class="org.oscarehr.caisi_integrator.util.IntegratorGZIPFeature"/>
+        </cxf:features>
+    </cxf:bus>
+
+	<!-- Managed WS Beans -->
+	<!-- The WS classes are turned into spring beans to allow autowiring etc, then the endpoints reference them -->
+ 	<context:component-scan base-package="org.oscarehr.caisi_integrator.ws"/>
+
+	<!-- web service endpoints -->
+	
+	<jaxws:endpoint implementor="#helloWorldWs" address="/HelloWorldService" publishedEndpointUrl="${integrator_server.https_endpoint_url_base}/HelloWorldService" />	
+	<jaxws:endpoint implementor="#demographicWs" address="/DemographicService" publishedEndpointUrl="${integrator_server.https_endpoint_url_base}/DemographicService" />
+	<jaxws:endpoint implementor="#facilityWs" address="/FacilityService" publishedEndpointUrl="${integrator_server.https_endpoint_url_base}/FacilityService" />
+	<jaxws:endpoint implementor="#programWs" address="/ProgramService" publishedEndpointUrl="${integrator_server.https_endpoint_url_base}/ProgramService" />
+	<jaxws:endpoint implementor="#providerWs" address="/ProviderService" publishedEndpointUrl="${integrator_server.https_endpoint_url_base}/ProviderService" />
+	<jaxws:endpoint implementor="#referralWs" address="/ReferralService" publishedEndpointUrl="${integrator_server.https_endpoint_url_base}/ReferralService" />
+	<jaxws:endpoint implementor="#hnrWs" address="/HnrService" publishedEndpointUrl="${integrator_server.https_endpoint_url_base}/HnrService" />
+
+	<!-- Performance Monitor -->
+	<!-- 
+	<aop:config>
+		<aop:advisor pointcut="execution(public * org.oscarehr.caisi_integrator.ws.*Ws.*(..))" advice-ref="methodTimerInterceptor" />
+	</aop:config>
+  	-->
+  	
+</beans>

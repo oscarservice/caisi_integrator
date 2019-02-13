@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<server>
+	<misc>
+		<build_date_time>${build_date_time}</build_date_time>
+		<vmstat_logging_period>900000</vmstat_logging_period>
+		<override_config_sytem_property_key>caisi_integrator_config</override_config_sytem_property_key>
+	</misc>
+	<database>
+		<user>dbuser</user>
+		<password>dbpassword</password>
+		<url_prefix>jdbc:mysql://127.0.0.1:3306/</url_prefix>
+		<schema>caisi_integrator</schema>
+		<driver>com.mysql.jdbc.Driver</driver>
+	</database>
+	<integrator_server>
+		<https_endpoint_url_base>https://127.0.0.1:8086/caisi_integrator/ws</https_endpoint_url_base>
+		<require_consent_to_read_data>false</require_consent_to_read_data>
+		<require_phi_filter_to_read_data>false</require_phi_filter_to_read_data>
+		<log_performance>false</log_performance>
+		<compression>true</compression>
+	</integrator_server>
+	<hnr_server>
+		<endpoint_url_base>http://127.0.0.1:8095/hnr/ws</endpoint_url_base>
+		<user>test_user</user>
+		<password>test_password</password>
+	</hnr_server>
+	<recaptcha>
+		<!-- DO NOT CHECK IN RECAPTCHA KEYS INTO THE SOURCE REPOSITORIES -->
+		<!-- Leaving the values blank will disable recaptcha on the login page -->
+		<public_key></public_key>
+		<private_key></private_key>
+	</recaptcha>
+</server>

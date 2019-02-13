@@ -1,0 +1,70 @@
+<!-- Note that this is not a self standing ant build file. This file is only meant to be called from maven. -->
+<project default="copy_jsps">
+	<property name="webapps.dir" value="catalina_base/webapps" />
+	<property name="context.dir" value="${webapps.dir}/caisi_integrator" />
+
+	<target name="copy_jsps">
+		<echo message="Copying jsps" />
+
+		<copy todir="${context.dir}">
+			<fileset dir="src/main/webapp" />
+		</copy>
+	</target>
+
+	<target name="build_catalina_base">
+		<copy todir="${context.dir}">
+			<fileset dir="target/caisi_integrator-0.0-SNAPSHOT" />
+		</copy>
+	</target>
+
+	<!-- this task updates a properties file after a compile but before a package -->
+	<target name="set_build_time">
+		<tstamp>
+			<format property="build.dateTime.value" pattern="yyyy-MM-dd hh:mm aa" />
+		</tstamp>
+
+		<echo message="build time : ${build.dateTime.value}" />
+
+		<replace file="target/classes/config.xml" token="${build_date_time}" value="${build.dateTime.value}" />
+	</target>
+
+	<target name="clean_catalina_base">
+		<delete dir="${context.dir}" />
+		<delete includeemptydirs="true" quiet="true">
+			<fileset dir="catalina_base/logs" excludes=".gitignore" />
+			<fileset dir="catalina_base/work" excludes=".gitignore" />
+		</delete>
+	</target>
+
+	<fileset id="modelClasses" dir="target/classes/">
+		<include name="**/dao/*.class" />
+		<exclude name="**/dao/*Dao*"/>
+		<exclude name="**/dao/*Abstract*"/>
+		<exclude name="**/dao/*$*"/>
+		<exclude name="**/dao/MatchingCachedDemographicScore.class" />
+		<exclude name="**/dao/IssueCode.class" />
+	</fileset>
+	
+	<target name="open_jpa_tasks">
+		<taskdef name="pcEnhancerTask" classname="org.apache.openjpa.ant.PCEnhancerTask" classpath="${maven_cp}" />
+		<pcEnhancerTask classpath="${maven_cp}" >
+			<fileset refid="modelClasses" />
+		</pcEnhancerTask>
+
+		<taskdef name="mappingToolTask" classname="org.oscarehr.caisi_integrator.util.SpringJpaMappingToolTask" classpath="${maven_cp}" />
+		<mappingToolTask classpath="${maven_cp}" schemaAction="build" sqlfile="target/create_tables.sql">
+			<fileset refid="modelClasses" />
+		</mappingToolTask>
+		<!-- don't use, it doesn't drop the DB, it drops individual tables only so removed tables would be missed 2009-02-27
+		<mappingToolTask classpath="${maven_cp}" schemaAction="dropDB" sqlfile="target/drop_tables.sql">
+			<fileset refid="modelClasses" />
+		</mappingToolTask>
+		-->
+		<!-- don't use, it doesn't create everything, it only adds new columns, it misses things like indexes 2009-02-27
+		<mappingToolTask classpath="${maven_cp}" schemaAction="refresh" sqlfile="target/patch_tables.sql">
+			<fileset refid="modelClasses" />
+		</mappingToolTask>
+		-->
+	</target>
+
+</project>

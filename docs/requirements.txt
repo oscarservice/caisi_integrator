@@ -1,0 +1,11 @@
+The following aren't requirements per se but what was used during the development of this version.
+
+running : 
+- jdk1.6.0_10
+- tomcat 6.0.18
+- mysql 5.1.30
+
+build :
+- maven2 2.0.9
+
+

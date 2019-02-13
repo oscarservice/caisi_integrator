@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd version="4.3" timestamp="2017-01-11T10:19:57.183">
+<suppressedviolation filename="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/util/ConsentDomainUtil.java" suppressiontype="annotation" msg="Avoid unused method parameters such as 'codeGroup'." usermsg=""/>
+<suppressedviolation filename="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/util/ConsentDomainUtil.java" suppressiontype="annotation" msg="Avoid unused method parameters such as 'code'." usermsg=""/>
+<suppressedviolation filename="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/util/ConsentDomainUtil.java" suppressiontype="annotation" msg="Avoid unused method parameters such as 'codeGroup'." usermsg=""/>
+<suppressedviolation filename="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/util/ConsentDomainUtil.java" suppressiontype="annotation" msg="Avoid unused method parameters such as 'code'." usermsg=""/>
+<suppressedviolation filename="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/util/ConsentDomainUtil.java" suppressiontype="annotation" msg="Avoid unused method parameters such as 'codeGroup'." usermsg=""/>
+<suppressedviolation filename="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/util/ConsentDomainUtil.java" suppressiontype="annotation" msg="Avoid unused method parameters such as 'code'." usermsg=""/>
+<suppressedviolation filename="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/util/ConsentDomainUtil.java" suppressiontype="annotation" msg="Avoid unused method parameters such as 'codeGroup'." usermsg=""/>
+<suppressedviolation filename="/home/annie/git_mcmaster/integrator_trunk/integrator/src/main/java/org/oscarehr/caisi_integrator/util/ConsentDomainUtil.java" suppressiontype="annotation" msg="Avoid unused method parameters such as 'code'." usermsg=""/>
+</pmd>

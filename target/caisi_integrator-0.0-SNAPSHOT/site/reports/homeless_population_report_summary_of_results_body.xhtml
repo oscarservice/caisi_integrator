@@ -1,0 +1,52 @@
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:util="http://java.sun.com/jsf/composite/components"
+	xmlns:caisi="http://caisi.ca/mytags">
+	
+	<h2>Homeless Population Report Results</h2> 
+
+	<input type="button" onclick="document.location='homeless_population_report_single_results.jsf'" value="View Most Recent Report" />
+	
+	<br /><br />
+	
+	<hr />
+	<h3>Previous Reports</h3>
+	<h:form>
+		<table>
+			<tr>
+				<td>Year</td>
+				<td>Month</td>
+				<td>Available Reports</td>
+			</tr>
+			<tr>
+				<td>
+					<h:selectOneListbox size="8" value="#{homelessPopulationReportSummaryJsfBean.selectedYear}" onchange="this.form.submit()">
+						<f:selectItems value="#{homelessPopulationReportSummaryJsfBean.availableYears}"/>
+					</h:selectOneListbox>					
+				</td>
+				<td>
+					<h:selectOneListbox size="8" value="#{homelessPopulationReportSummaryJsfBean.selectedMonth}" onchange="this.form.submit()">
+						<f:selectItems value="#{homelessPopulationReportSummaryJsfBean.availableMonths}"/>
+					</h:selectOneListbox>					
+				</td>
+				<td>
+					<h:selectOneListbox size="8" value="#{homelessPopulationReportSummaryJsfBean.selectedReportId}">
+						<f:selectItems value="#{homelessPopulationReportSummaryJsfBean.availableReports}"/>
+					</h:selectOneListbox>					
+				</td>
+			</tr>
+		</table>
+		<h:commandButton value="View Report" action="#{homelessPopulationReportSummaryJsfBean.viewReport}" />
+	</h:form>
+	
+	<br /><br />
+
+	<hr />
+	<h3>Historical Daily Averages</h3>
+	
+	Number of clients in programs
+	<caisi:renderAllYearsPopulationGraphs allYearsPopulationAverages="#{homelessPopulationReportSummaryJsfBean.allYearsPopulationAverages}" />
+
+</html>

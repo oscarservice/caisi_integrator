@@ -1,0 +1,28 @@
+<ui:composition template="/resources/components/html_layout.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:util="http://java.sun.com/jsf/composite/components"
+	xmlns:caisi="http://caisi.ca/mytags">
+	
+	<ui:define name="menu">
+		<ui:remove>no menu on this page</ui:remove>
+	</ui:define>
+
+	<ui:define name="body">	
+	
+		<h:form>
+			<span style="font-weight:bold">Database Data Version</span> : #{databaseUpgradeJsfBean.databaseDataVersion}
+			<br />	
+			<span style="font-weight:bold">Code Data Version</span> : #{databaseUpgradeJsfBean.codeDataVersion}
+			<br />
+			<br />
+			<h2 style="color:red">A reminder to make sure you have backed up your database first.</h2>
+			<br />
+			<h:commandButton value="Upgrade" disabled="#{databaseUpgradeJsfBean.disableUpgradeButton}" action="#{databaseUpgradeJsfBean.upgrade}" />
+		</h:form>
+		
+	</ui:define>
+	
+</ui:composition>

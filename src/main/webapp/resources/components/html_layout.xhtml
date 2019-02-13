@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:caisi="http://caisi.ca/mytags">
+	
+	<h:head>
+		<ui:insert name="customMeta"></ui:insert>
+		<link rel="stylesheet" type="text/css" href="#{request.contextPath}/resources/css/default.css" title="default" />
+		<title><ui:insert name="customTitle">Caisi Integrator</ui:insert></title>
+		<ui:insert name="customStyle"></ui:insert>
+	</h:head>
+	<h:body>
+		<table class="pageTable">
+						
+			<ui:remove>This is the top frame</ui:remove>
+			<tr>
+				<td class="pageFrameTopLeft"></td>
+				<td class="pageFrameTopMiddle"></td>
+				<td class="pageFrameTopRight"></td>
+			</tr>
+
+			<ui:remove>This is the top header</ui:remove>
+			<ui:insert name="header">
+				<tr>
+					<td class="pageFrameLeftMiddle"></td>
+					<td style="background-color: #008000; padding-bottom: 4px">
+						<img src="#{request.contextPath}/resources/images/site_logo.png" alt="site_logo" />
+					</td>
+					<td class="pageFrameRightMiddle"></td>
+				</tr>
+			</ui:insert>
+
+			<ui:remove>This is the top menu</ui:remove>
+			<ui:insert name="menu">
+				<tr>
+					<td class="pageFrameLeftMiddle"></td>
+					<td style="background-color:#008000">
+						<ui:include src="/resources/components/menu.xhtml" />
+					</td>
+					<td class="pageFrameRightMiddle"></td>
+				</tr>
+			</ui:insert>
+
+		
+			<ui:remove>This is the main content</ui:remove>
+			<tr>
+				<td class="pageFrameLeftMiddle"></td>
+				<td style="padding:16px;background-color:#ffffff">
+					<div style="text-align:center">
+						<h:messages infoClass="infoMessages" errorClass="errorMessages" />
+					</div>
+					
+					<table style="margin-left:auto;margin-right:auto">
+						<tr>
+							<td>
+								<ui:insert name="body">Missing Content</ui:insert>
+							</td>
+						</tr>
+					</table>
+				</td>
+				<td class="pageFrameRightMiddle"></td>
+			</tr>
+				
+			<ui:remove>This is the bottom frame</ui:remove>
+			<tr>
+				<td class="pageFrameBottomLeft"></td>
+				<td class="pageFrameBottomMiddle"></td>
+				<td class="pageFrameBottomRight"></td>
+			</tr>
+
+		</table>
+
+		<div class="footer">
+			Build date : #{caisi:buildDateTime()}
+		</div>		
+	
+	</h:body>
+</html>

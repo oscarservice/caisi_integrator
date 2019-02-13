@@ -1,0 +1,49 @@
+<ui:composition template="/resources/components/html_layout.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:util="http://java.sun.com/jsf/composite/components"
+	xmlns:caisi="http://caisi.ca/mytags">
+	
+	<ui:define name="body">
+		<table class="roundedCollapsedTable">
+			<tr>
+				<td colspan="2" class="roundedTableHeader">Summary</td>
+			</tr>
+			<tr>
+				<td class="fieldLabel">Total Facilities</td>
+				<td>#{summaryJsfBean.facilityCount}</td>
+			</tr>
+			<tr>
+				<td class="fieldLabel">Total Providers</td>
+				<td>#{summaryJsfBean.providerCount}</td>
+			</tr>
+			<tr>
+				<td class="fieldLabel">Total Programs</td>
+				<td>#{summaryJsfBean.programCount}</td>
+			</tr>
+			<tr>
+				<td class="fieldLabel">Total Clients</td>
+				<td>#{summaryJsfBean.clientCount}</td>
+			</tr>
+			<tr>
+				<td class="fieldLabel">Total Notes</td>
+				<td>#{summaryJsfBean.noteCount}</td>
+			</tr>
+			<tr>
+				<td class="fieldLabel">Total Issues</td>
+				<td>#{summaryJsfBean.issueCount}</td>
+			</tr>
+			<tr>
+				<td class="fieldLabel">Total Preventions</td>
+				<td>#{summaryJsfBean.preventionCount}</td>
+			</tr>
+			<tr>
+				<td class="fieldLabel">Total Drugs</td>
+				<td>#{summaryJsfBean.drugCount}</td>
+			</tr>
+		</table>
+	</ui:define>
+	
+</ui:composition>

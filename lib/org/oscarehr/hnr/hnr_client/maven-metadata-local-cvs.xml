@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><metadata>
+  <groupId>org.oscarehr.hnr</groupId>
+  <artifactId>hnr_client</artifactId>
+  <version>0.0.0</version>
+  <versioning>
+    <versions>
+      <version>0.0.0</version>
+      <version>SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20090612220324</lastUpdated>
+  </versioning>
+</metadata>

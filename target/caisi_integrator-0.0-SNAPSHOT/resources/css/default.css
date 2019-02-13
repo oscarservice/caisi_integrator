@@ -1,0 +1,185 @@
+/* ----- built in changes ----- */
+
+	body
+	{
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 12px;
+		background-color: #d8d8d8;
+	}
+	
+/* ----- page / menu ----- */
+
+	.pageTable
+	{
+		width: 100%;
+		border-collapse: collapse;
+	}
+
+	.pageFrameTopLeft
+	{
+		width: 16px;
+		height: 16px;
+		background: no-repeat top left url('../images/page_top_left.png');
+	}
+
+	.pageFrameTopMiddle
+	{
+		height: 16px;
+		background: repeat-x top center url('../images/page_top_middle.png');
+	}
+
+	.pageFrameTopRight
+	{
+		width: 16px;
+		height: 16px;
+		background: no-repeat top right url('../images/page_top_right.png');
+	}
+	
+	.pageFrameLeftMiddle
+	{
+		width: 16px;
+		background: repeat-y left url('../images/page_left_middle.png');
+	}
+	
+	.pageFrameRightMiddle
+	{
+		width: 16px;
+		background: repeat-y right url('../images/page_right_middle.png');
+	}
+	
+	.pageFrameBottomLeft
+	{
+		width: 16px;
+		height: 16px;
+		background: no-repeat bottom left url('../images/page_bottom_left.png');
+	}
+
+	.pageFrameBottomMiddle
+	{
+		height: 16px;
+		background: repeat-x bottom center url('../images/page_bottom_middle.png');
+	}
+
+	.pageFrameBottomRight
+	{
+		width: 16px;
+		height: 16px;
+		background: no-repeat bottom right url('../images/page_bottom_right.png');
+	}
+	
+	.menu
+	{
+		font-size: 10px;
+		color: #80ff80;
+		width: 100%;
+		border-collapse: collapse;
+		border: solid #80ff80;
+		border-width: 1px 0px 0px 0px;
+	}
+	
+	.menu td
+	{
+		padding-top: 3px;
+		padding-bottom: 3px;
+	}
+
+	.menu a
+	{
+		color: #ffffff;
+		text-decoration: none;
+		padding-left: 8px;
+		padding-right: 8px;
+		font-weight: bold;
+	}
+	
+	.menu a:hover
+	{
+		text-decoration: underline;
+	}
+	
+	.footer
+	{
+		padding: 1px;
+		text-align: right;
+		font-size: 9px;
+		color:#333333
+	}
+
+/* ----- table / panels ----- */
+
+	.borderedCollapsedTable
+	{
+		border:solid #333333 1px;
+		border-collapse:collapse
+	}
+	
+	.borderedCollapsedTable td
+	{
+		padding-left: 8px;
+		padding-right: 8px;
+	}
+	
+	.tableHeader
+	{
+		font-weight: bold;
+		background: #aaaaff;
+		text-align: center;
+		padding-top: 2px;
+		padding-bottom: 2px;
+		border:solid #333333 1px;
+	}
+
+	.roundedCollapsedTable
+	{
+		border-collapse: collapse;
+		background-color: #e0e0e0;
+		border-radius: 6px;
+	}
+
+	.roundedCollapsedTable td
+	{
+		padding-left: 8px;
+		padding-right: 8px;
+	}
+	.roundedTableHeader
+	{
+		font-weight: bold;
+		background: #aaaaff;
+		text-align: center;
+		padding-top: 2px;
+		padding-bottom: 2px;
+		border-top-right-radius: 6px 6px;
+		border-top-left-radius: 6px 6px;
+	}
+
+	.bgAlternatingGray
+	{
+		background-color: #dcdcdc;
+	}
+
+	.bgAlternatingGray1
+	{
+		background-color: #f3f3f3;
+	}
+	
+/* ----- misc ----- */
+
+	.showBorder
+	{
+		border:solid #333333 1px;
+	}
+
+	.fieldLabel
+	{
+		font-weight: bold;
+	}
+	
+	.errorMessages
+	{
+		color: #dd0000;
+	}
+	
+	.infoMessages
+	{
+		color: #00aa00;
+	}

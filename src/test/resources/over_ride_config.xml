@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<server>
+	<misc>
+		<build_date_time>foo</build_date_time>
+	</misc>
+	<smtp>
+		<recipient_override>foo@example.com</recipient_override>
+		<print_instead_of_send>true</print_instead_of_send>
+	</smtp>
+	<test_list>
+		<test_list_entry list_entry="true" clear_list="true">one</test_list_entry>
+		<test_list_entry list_entry="true">two</test_list_entry>
+		<test_list_entry list_entry="true">three</test_list_entry>		
+	</test_list>
+</server>

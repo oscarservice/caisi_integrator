@@ -1,0 +1,55 @@
+<ui:composition template="/resources/components/html_layout.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:util="http://java.sun.com/jsf/composite/components"
+	xmlns:caisi="http://caisi.ca/mytags">
+	
+	<ui:define name="customMeta">
+		<ui:remove>prevent unrestoreable view error from session time out</ui:remove>
+		<meta http-equiv="refresh" content="1800" />
+	</ui:define>
+
+	<ui:define name="menu">
+		<ui:remove>no menu on this page</ui:remove>
+	</ui:define>
+
+	<ui:define name="body">
+		<h:form>		
+			<table class="roundedCollapsedTable">
+				<tr>
+					<td colspan="2" class="roundedTableHeader">Login</td>
+				</tr>
+				<tr>
+					<td class="fieldLabel" style="padding-top:12px">User</td>
+					<td style="padding-top:12px"><h:inputText value="#{loginJsfBean.username}" /></td>
+				</tr>
+				<tr>
+					<td class="fieldLabel" style="padding-top:8px">Password</td>
+					<td style="padding-top:12px"><h:inputSecret value="#{loginJsfBean.password}" /></td>
+				</tr>
+				<tr>
+					<td colspan="2" style="padding-top:12px">
+						<h:panelGroup rendered="#{loginJsfBean.recaptchaEnbled}">
+							<script type="text/javascript" src="http://api.recaptcha.net/challenge?k=#{loginJsfBean.recaptchaPublicKey}">
+							</script>
+							<noscript>
+								<iframe src="http://api.recaptcha.net/noscript?k=#{loginJsfBean.recaptchaPublicKey}" height="300" width="500" frameborder="0">
+								</iframe>
+								<br />
+								<textarea name="recaptcha_challenge_field" rows="3" cols="40">
+								</textarea>
+								<input type="hidden" name="recaptcha_response_field" value="manual_challenge" />
+						</noscript>
+						</h:panelGroup>					
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" style="text-align:center;padding-top:12px;padding-bottom:8px"><h:commandButton value="Login" action="#{loginJsfBean.login}" /></td>
+				</tr>
+			</table>
+		</h:form>
+	</ui:define>
+	
+</ui:composition>

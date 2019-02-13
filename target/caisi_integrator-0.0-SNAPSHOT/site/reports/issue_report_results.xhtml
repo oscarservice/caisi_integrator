@@ -1,0 +1,41 @@
+<ui:composition template="/resources/components/html_layout.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:util="http://java.sun.com/jsf/composite/components"
+	xmlns:caisi="http://caisi.ca/mytags">
+	
+	<ui:define name="body">		
+
+		<h3>Results for</h3> 
+		#{issueReportJsfBean.reportParameters}
+		
+		<br /><br />
+		
+		<h:dataTable value="#{issueReportJsfBean.reportResultsForDisplay}" var="row" styleClass="borderedCollapsedTable" headerClass="tableHeader showBorder" columnClasses="showBorder,showBorder,showBorder,showBorder" rowClasses="bgAlternatingGray,bgAlternatingGray1">
+			<h:column>
+				<f:facet name="header">Date</f:facet>
+				#{row.occuranceDate}
+			</h:column>			
+			<h:column>
+				<f:facet name="header">Facility</f:facet>
+				#{row.facility}
+			</h:column>			
+			<h:column>
+				<f:facet name="header">Issue Type / Code</f:facet>
+				#{row.issueTypeCode}
+			</h:column>			
+			<h:column>
+				<f:facet name="header">Issue Description</f:facet>
+				#{row.issueDescription}
+			</h:column>			
+		</h:dataTable>
+
+		<br />
+		
+		<input type="button" value="Download as CSV" onclick="document.location='issue_report_export.jsp'" />
+		
+	</ui:define>
+	
+</ui:composition>
