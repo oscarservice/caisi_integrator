@@ -1,0 +1,175 @@
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:util="http://java.sun.com/jsf/composite/components"
+	xmlns:caisi="http://caisi.ca/mytags">
+	
+	<f:metadata>
+		<f:viewParam name="reportId" value="#{homelessPopulationReportResultsJsfBean.reportId}" />       
+	</f:metadata>
+
+	<div style="text-align:right">
+		<input type="button" value="back" onclick="history.go(-1)" />
+	</div>
+		
+	
+	<div style="text-align:center">
+		<h2>Homeless Population Report Results</h2> 
+	</div>
+	<br />
+	
+	<h4>Report Date</h4>
+	<h:outputText value="#{homelessPopulationReportResultsJsfBean.homelessPopulationReport.reportTime}" converter="localDateTimeConverter" />
+	<br />
+	All numbers correspond to results on the report date (not the currrent date).
+
+		<br /><br />
+
+	<h4>Population</h4>
+	<table class="borderedCollapsedTable">
+		<tr>
+			<td class="tableHeader" style="text-align:left">Individuals who were in the selected programs in the past year</td>
+			<td class="showBorder"><h:outputText value="#{homelessPopulationReportResultsJsfBean.homelessPopulationReport.clientCountInPastYear}" converter="hideLessThan5Converter" /></td>
+		</tr>
+		<tr>
+			<td class="tableHeader" style="text-align:left">Individuals currently in the selected programs</td>
+			<td class="showBorder"><h:outputText value="#{homelessPopulationReportResultsJsfBean.homelessPopulationReport.currentClientCount}" converter="hideLessThan5Converter" /></td>
+		</tr>
+	</table>		
+	
+	<br /><br />
+
+	<h4>Intensity of use</h4>
+	<table class="borderedCollapsedTable">
+		<tr>
+			<td class="tableHeader" style="text-align:left">Low Use (1 - 10 days in past 4 years)</td>
+			<td class="showBorder"><h:outputText value="#{homelessPopulationReportResultsJsfBean.homelessPopulationReport.usage1To10DaysInPast4Years}" converter="hideLessThan5Converter" /></td>
+		</tr>
+		<tr>
+			<td class="tableHeader" style="text-align:left">Moderate Use (11 - 179 days in past 4 years)</td>
+			<td class="showBorder"><h:outputText value="#{homelessPopulationReportResultsJsfBean.homelessPopulationReport.usage11To179DaysInPast4Years}" converter="hideLessThan5Converter" /></td>
+		</tr>
+		<tr>
+			<td class="tableHeader" style="text-align:left">High Use (180 - 730 days in past 4 years)</td>
+			<td class="showBorder"><h:outputText value="#{homelessPopulationReportResultsJsfBean.homelessPopulationReport.usage180To730DaysInPast4Years}" converter="hideLessThan5Converter" /></td>
+		</tr>
+	</table>		
+	
+	<br /><br />
+
+	<h4>Mortality</h4>
+	<table class="borderedCollapsedTable">
+		<tr>
+			<td class="tableHeader" style="text-align:left">Number of deaths in past year</td>
+			<td class="showBorder"><h:outputText value="#{homelessPopulationReportResultsJsfBean.homelessPopulationReport.mortalityInPastYear}" converter="hideLessThan5Converter" /></td>
+		</tr>
+		<tr>
+			<td class="tableHeader" style="text-align:left">Number of deaths in past year / population</td>
+			<td class="showBorder">#{homelessPopulationReportResultsJsfBean.mortalityRate}</td>
+		</tr>
+	</table>		
+	
+	<br /><br />
+
+	<h4>Major Medical Condition</h4>
+	<table class="borderedCollapsedTable">
+		<tr>
+			<td class="tableHeader">Condition</td>
+			<td class="tableHeader">Number of cases</td>
+			<td class="tableHeader">Prevalence of condition</td>
+		</tr>
+		<tr>
+			<td class="tableHeader" style="text-align:left">HIV / AIDS</td>
+			<td class="showBorder"><h:outputText value="#{homelessPopulationReportResultsJsfBean.homelessPopulationReport.currentHiv}" converter="hideLessThan5Converter" /></td>
+			<td class="showBorder">#{homelessPopulationReportResultsJsfBean.currentHivRate}</td>
+		</tr>
+		<tr>
+			<td class="tableHeader" style="text-align:left">Cancer</td>
+			<td class="showBorder"><h:outputText value="#{homelessPopulationReportResultsJsfBean.homelessPopulationReport.currentCancer}" converter="hideLessThan5Converter" /></td>
+			<td class="showBorder">#{homelessPopulationReportResultsJsfBean.currentCancerRate}</td>
+		</tr>
+		<tr>
+			<td class="tableHeader" style="text-align:left">Diabetes</td>
+			<td class="showBorder"><h:outputText value="#{homelessPopulationReportResultsJsfBean.homelessPopulationReport.currentDiabetes}" converter="hideLessThan5Converter" /></td>
+			<td class="showBorder">#{homelessPopulationReportResultsJsfBean.currentDiabetesRate}</td>
+		</tr>
+		<tr>
+			<td class="tableHeader" style="text-align:left">Seizure Disorder</td>
+			<td class="showBorder"><h:outputText value="#{homelessPopulationReportResultsJsfBean.homelessPopulationReport.currentSeizure}" converter="hideLessThan5Converter" /></td>
+			<td class="showBorder">#{homelessPopulationReportResultsJsfBean.currentSeizureRate}</td>
+		</tr>
+		<tr>
+			<td class="tableHeader" style="text-align:left">Chronic Liver Disease</td>
+			<td class="showBorder"><h:outputText value="#{homelessPopulationReportResultsJsfBean.homelessPopulationReport.currentLiverDisease}" converter="hideLessThan5Converter" /></td>
+			<td class="showBorder">#{homelessPopulationReportResultsJsfBean.currentLiverDiseaseRate}</td>
+		</tr>
+	</table>		
+	
+	<br /><br />
+
+	<h4>Major Mental Illness</h4>
+	<table class="borderedCollapsedTable">
+		<tr>
+			<td class="tableHeader">Condition</td>
+			<td class="tableHeader">Number of cases</td>
+			<td class="tableHeader">Prevalence of condition</td>
+		</tr>
+		<tr>
+			<td class="tableHeader" style="text-align:left">Schizophrenia</td>
+			<td class="showBorder"><h:outputText value="#{homelessPopulationReportResultsJsfBean.homelessPopulationReport.currentSchizophrenia}" converter="hideLessThan5Converter" /></td>
+			<td class="showBorder">#{homelessPopulationReportResultsJsfBean.currentSchizophreniaRate}</td>
+		</tr>
+		<tr>
+			<td class="tableHeader" style="text-align:left">Bipolar Disease</td>
+			<td class="showBorder"><h:outputText value="#{homelessPopulationReportResultsJsfBean.homelessPopulationReport.currentBipolar}" converter="hideLessThan5Converter" /></td>
+			<td class="showBorder">#{homelessPopulationReportResultsJsfBean.currentBipolarRate}</td>
+		</tr>
+		<tr>
+			<td class="tableHeader" style="text-align:left">Depression</td>
+			<td class="showBorder"><h:outputText value="#{homelessPopulationReportResultsJsfBean.homelessPopulationReport.currentDepression}" converter="hideLessThan5Converter" /></td>
+			<td class="showBorder">#{homelessPopulationReportResultsJsfBean.currentDepressionRate}</td>
+		</tr>
+		<tr>
+			<td class="tableHeader" style="text-align:left">Cognitive Disability</td>
+			<td class="showBorder"><h:outputText value="#{homelessPopulationReportResultsJsfBean.homelessPopulationReport.currentCognitiveDisability}" converter="hideLessThan5Converter" /></td>
+			<td class="showBorder">#{homelessPopulationReportResultsJsfBean.currentCognitiveDisabilityRate}</td>
+		</tr>
+	</table>		
+	
+	<br /><br />
+
+	<h4>Serious Medical Conditions</h4>
+	<table class="borderedCollapsedTable">
+		<tr>
+			<td class="tableHeader">Condition</td>
+			<td class="tableHeader">Number of cases</td>
+			<td class="tableHeader">Prevalence of condition</td>
+		</tr>
+		<tr>
+			<td class="tableHeader" style="text-align:left">Pneumonia</td>
+			<td class="showBorder"><h:outputText value="#{homelessPopulationReportResultsJsfBean.homelessPopulationReport.currentPneumonia}" converter="hideLessThan5Converter" /></td>
+			<td class="showBorder">#{homelessPopulationReportResultsJsfBean.currentPneumoniaRate}</td>
+		</tr>
+		<tr>
+			<td class="tableHeader" style="text-align:left">Influenza</td>
+			<td class="showBorder"><h:outputText value="#{homelessPopulationReportResultsJsfBean.homelessPopulationReport.currentInfluenza}" converter="hideLessThan5Converter" /></td>
+			<td class="showBorder">#{homelessPopulationReportResultsJsfBean.currentInfluenzaRate}</td>
+		</tr>
+	</table>		
+
+	<br /><br />
+
+	<h4>Programs used in report</h4>
+	<h:dataTable value="#{homelessPopulationReportResultsJsfBean.programsUsed}" var="row" styleClass="borderedCollapsedTable" headerClass="tableHeader showBorder" columnClasses="showBorder,showBorder" rowClasses="bgAlternatingGray,bgAlternatingGray1">
+		<h:column>
+			<f:facet name="header">Facility Name</f:facet>
+			#{row.facilityName}
+		</h:column>			
+		<h:column>
+			<f:facet name="header">Program Name</f:facet>
+			#{row.programName}
+		</h:column>			
+	</h:dataTable>
+
+</html>

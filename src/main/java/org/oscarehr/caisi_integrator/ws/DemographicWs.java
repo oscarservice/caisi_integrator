@@ -35,6 +35,8 @@ import org.oscarehr.caisi_integrator.dao.CachedDemographicDrug;
 import org.oscarehr.caisi_integrator.dao.CachedDemographicDrugDao;
 import org.oscarehr.caisi_integrator.dao.CachedDemographicForm;
 import org.oscarehr.caisi_integrator.dao.CachedDemographicFormDao;
+import org.oscarehr.caisi_integrator.dao.CachedDemographicHL7LabResult;
+import org.oscarehr.caisi_integrator.dao.CachedDemographicHL7LabResultDao;
 import org.oscarehr.caisi_integrator.dao.CachedDemographicImage;
 import org.oscarehr.caisi_integrator.dao.CachedDemographicImageDao;
 import org.oscarehr.caisi_integrator.dao.CachedDemographicIssue;
@@ -75,7 +77,10 @@ import org.oscarehr.caisi_integrator.util.CodeType;
 import org.oscarehr.caisi_integrator.util.ConsentDomainUtil;
 import org.oscarehr.caisi_integrator.util.ConsentDomainUtil.CodeGroup;
 import org.oscarehr.caisi_integrator.util.MiscUtils;
-import org.oscarehr.caisi_integrator.ws.GetConsentTransfer.ConsentState;
+import org.oscarehr.caisi_integrator.ws.transfer.DemographicTransfer;
+import org.oscarehr.caisi_integrator.ws.transfer.GetConsentTransfer;
+import org.oscarehr.caisi_integrator.ws.transfer.GetConsentTransfer.ConsentState;
+import org.oscarehr.caisi_integrator.ws.transfer.SetConsentTransfer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -159,6 +164,9 @@ public class DemographicWs extends AbstractWs
 
 	@Autowired
 	private CachedDemographicLabResultDao cachedDemographicLabResultDao;
+
+	@Autowired
+	private CachedDemographicHL7LabResultDao cachedDemographicHL7LabResultDao;
 
 	/**
 	 * When calling this method, the client doesn't need to fill in the facility ID, it will be sorted out by the server.
@@ -716,7 +724,7 @@ public class DemographicWs extends AbstractWs
 			//remove all
 			for (CachedDemographicPrevention x : previousDemographicPreventions)
 			{
-				cachedDemographicIssueDao.remove(x.getFacilityPreventionPk());
+				cachedDemographicPreventionDao.remove(x.getFacilityPreventionPk());
 			}
 		}
 	}
@@ -1466,6 +1474,25 @@ public class DemographicWs extends AbstractWs
 	}
 
 	/**
+	 * lab results are large, so send one at a time instead of a whole list like other items.
+	 */
+	public void addCachedDemographicHL7LabResult(CachedDemographicHL7LabResult cachedDemographicHL7LabResult)
+	{
+		try
+		{
+			Facility loggedInFacility = getLoggedInFacility();
+			cachedDemographicHL7LabResult.getId().setIntegratorFacilityId(loggedInFacility.getId());
+
+			logger.debug("add lab : " + cachedDemographicHL7LabResult);
+			cachedDemographicHL7LabResultDao.replace(cachedDemographicHL7LabResult);
+		}
+		catch (Exception e)
+		{
+			logger.error("unexpected error", e);
+		}
+	}
+
+	/**
 	 * Get all lab results from clients linked to this client, this method will
 	 * exclude lab results from the caller himself.
 	 */
@@ -1570,6 +1597,42 @@ public class DemographicWs extends AbstractWs
 			cachedDemographicDocumentContents.setFileContents(fileContents);
 
 			cachedDemographicDocumentDao.replace(cachedDemographicDocument);
+			cachedDemographicDocumentContentsDao.replace(cachedDemographicDocumentContents);
+		}
+		catch (Exception e)
+		{
+			logger.error("unexpected error", e);
+		}
+	}
+
+	public void addCachedDemographicDocument(CachedDemographicDocument cachedDemographicDocument)
+	{
+		try
+		{
+			Facility loggedInFacility = getLoggedInFacility();
+			cachedDemographicDocument.getId().setIntegratorFacilityId(loggedInFacility.getId());
+			cachedDemographicDocumentDao.replace(cachedDemographicDocument);
+		}
+		catch (Exception e)
+		{
+			logger.error("unexpected error", e);
+		}
+	}
+
+	public void addCachedDemographicDocumentContents(int cachedDemographicDocumentCaisiItemId, byte[] fileContents)
+	{
+		try
+		{
+			Facility loggedInFacility = getLoggedInFacility();
+
+			CachedDemographicDocumentContents cachedDemographicDocumentContents = new CachedDemographicDocumentContents();
+			FacilityIdIntegerCompositePk contentsPk = new FacilityIdIntegerCompositePk();
+			contentsPk.setIntegratorFacilityId(loggedInFacility.getId());
+			contentsPk.setCaisiItemId(cachedDemographicDocumentCaisiItemId);
+
+			cachedDemographicDocumentContents.setFacilityIntegerCompositePk(contentsPk);
+			cachedDemographicDocumentContents.setFileContents(fileContents);
+
 			cachedDemographicDocumentContentsDao.replace(cachedDemographicDocumentContents);
 		}
 		catch (Exception e)
@@ -1832,4 +1895,25 @@ public class DemographicWs extends AbstractWs
 			return(null);
 		}
 	}
+
+	public void setCachedDemographicHL7Labs(CachedDemographicHL7LabResult[] labResults)
+	{
+		if (labResults == null) return;
+
+		try
+		{
+			Facility loggedInFacility = getLoggedInFacility();
+
+			for (CachedDemographicHL7LabResult labResult : labResults)
+			{
+				labResult.getId().setIntegratorFacilityId(loggedInFacility.getId());
+				cachedDemographicHL7LabResultDao.replace(labResult);
+			}
+		}
+		catch (Exception e)
+		{
+			logger.error("unexpected error", e);
+		}
+	}
+
 }

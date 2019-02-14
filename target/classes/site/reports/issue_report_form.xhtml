@@ -1,0 +1,51 @@
+<ui:composition template="/resources/components/html_layout.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:util="http://java.sun.com/jsf/composite/components"
+	xmlns:caisi="http://caisi.ca/mytags">
+	
+	<ui:define name="body">		
+		<h:form>
+			<table>
+				<tr>
+					<td colspan="2">
+						This is meant to provide a list of issues newly diagnosed with in a given time frame
+						<br />
+						and the facility it was diagnosed at. If an issue is not present on the list
+						<br />
+						it means no instances were reported / are present on the integrator system.
+						<br />
+						<br />
+					</td>
+				</tr>
+				<tr>
+					<td class="fieldLabel" style="vertical-align:top">Issues</td>
+					<td>
+						<h:selectManyListbox size="10" value="#{issueReportJsfBean.selectedIssues}">
+							<f:selectItems value="#{issueReportJsfBean.listOfReportedIssueCodes}"/>
+						</h:selectManyListbox>					
+					</td>
+				</tr>
+				<tr>
+					<td class="fieldLabel">Start Date</td>
+					<td>
+						<util:simple_date yearField="#{issueReportJsfBean.startYear}" monthField="#{issueReportJsfBean.startMonth}" dayField="#{issueReportJsfBean.startDay}" />
+					</td>
+				</tr>
+				<tr>
+					<td class="fieldLabel">End Date</td>
+					<td>
+						<util:simple_date yearField="#{issueReportJsfBean.endYear}" monthField="#{issueReportJsfBean.endMonth}" dayField="#{issueReportJsfBean.endDay}" />
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td style="text-align:center"><h:commandButton value="List Issues" action="#{issueReportJsfBean.generateReportResults}" /></td>
+				</tr>
+			</table>
+		</h:form>
+	</ui:define>
+	
+</ui:composition>

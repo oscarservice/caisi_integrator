@@ -3,7 +3,7 @@ Test set: org.oscarehr.caisi_integrator.dao.CachedDemographicLabResultTest
 -------------------------------------------------------------------------------
 Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0 sec <<< FAILURE!
 org.oscarehr.caisi_integrator.dao.CachedDemographicLabResultTest  Time elapsed: 0 sec  <<< ERROR!
-<openjpa-2.1.1-r422266:1148538 fatal general error> org.apache.openjpa.persistence.PersistenceException: Cannot create PoolableConnectionFactory (Access denied for user 'dbuser'@'localhost' to database 'caisi_integrator')
+<openjpa-2.1.1-r422266:1148538 fatal general error> org.apache.openjpa.persistence.PersistenceException: Cannot create PoolableConnectionFactory (Access denied for user 'oscar'@'localhost' (using password: YES))
 	at org.apache.openjpa.jdbc.sql.DBDictionaryFactory.newDBDictionary(DBDictionaryFactory.java:102)
 	at org.apache.openjpa.jdbc.conf.JDBCConfigurationImpl.getDBDictionaryInstance(JDBCConfigurationImpl.java:603)
 	at org.apache.openjpa.jdbc.meta.MappingRepository.endConfiguration(MappingRepository.java:1510)
@@ -50,7 +50,7 @@ org.oscarehr.caisi_integrator.dao.CachedDemographicLabResultTest  Time elapsed: 
 	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-Caused by: org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Access denied for user 'dbuser'@'localhost' to database 'caisi_integrator')
+Caused by: org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Access denied for user 'oscar'@'localhost' (using password: YES))
 	at org.apache.commons.dbcp.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:1549)
 	at org.apache.commons.dbcp.BasicDataSource.createDataSource(BasicDataSource.java:1388)
 	at org.apache.commons.dbcp.BasicDataSource.getConnection(BasicDataSource.java:1044)
@@ -58,13 +58,8 @@ Caused by: org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableCon
 	at org.apache.openjpa.lib.jdbc.DecoratingDataSource.getConnection(DecoratingDataSource.java:106)
 	at org.apache.openjpa.jdbc.sql.DBDictionaryFactory.newDBDictionary(DBDictionaryFactory.java:91)
 	... 45 more
-Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Access denied for user 'dbuser'@'localhost' to database 'caisi_integrator'
-	at sun.reflect.GeneratedConstructorAccessor20.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
-	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
-	at com.mysql.jdbc.Util.getInstance(Util.java:386)
-	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1052)
+Caused by: java.sql.SQLException: Access denied for user 'oscar'@'localhost' (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1073)
 	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3609)
 	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3541)
 	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:943)

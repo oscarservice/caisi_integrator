@@ -13,6 +13,8 @@ import org.oscarehr.caisi_integrator.util.MiscUtils;
 @Embeddable
 public class NoteIssue implements Serializable, Comparable<NoteIssue>
 {
+	private static final long serialVersionUID = 1130555404818346588L;
+
 	private static final Logger logger=MiscUtils.getLogger();
 	
 	private CodeType codeType=null;

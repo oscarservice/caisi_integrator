@@ -29,8 +29,8 @@
 			<arg value="binding_customisation.xml" />
 			<arg value="-d" />
 			<arg value="${GENERATED_CLIENT_STUB_SOURCES}" />
-			<arg value="-wsdlList" />
-			<arg value="http://127.0.0.1:8085/${PROJECT_NAME}/ws?formatted=false&amp;wsdlList=true" />
+			<arg value="${serviceName}?wsdl" />
+
 		</java>
 		
 		<javac target="1.5" srcdir="${GENERATED_CLIENT_STUB_SOURCES}" destdir="${GENERATED_CLIENT_STUB_CLASSES}">

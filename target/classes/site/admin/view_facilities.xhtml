@@ -1,0 +1,36 @@
+<ui:composition template="/resources/components/html_layout.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:util="http://java.sun.com/jsf/composite/components"
+	xmlns:caisi="http://caisi.ca/mytags">
+	
+	<ui:define name="body">	
+	
+		<h:button value="Add New Facility" outcome="create_update_facility.jsf" />
+	
+		<br /><br />
+			
+		<h:dataTable value="#{viewFacilitiesJsfBean.allFacilities}" var="row" styleClass="borderedCollapsedTable" headerClass="tableHeader" columnClasses="showBorder,showBorder,showBorder" rowClasses="bgAlternatingGray,bgAlternatingGray1">
+			<h:column>
+				<f:facet name="header">Name</f:facet>
+				<h:link outcome="create_update_facility.jsf">
+					<f:param name="facilityId" value="#{row.id}" />
+					#{row.name}
+				</h:link>
+			</h:column>			
+
+			<h:column>
+				<f:facet name="header">Last Login</f:facet>
+				<h:outputText value="#{row.lastLogin}" converter="localDateTimeConverter" />
+			</h:column>			
+
+			<h:column>
+				<f:facet name="header">Enabled/Disabled</f:facet>
+				<span style="color:#{row.disabled?'#cc0000':'#006600'}">#{row.disabled?'Disabled':'Enabled'}</span>
+			</h:column>			
+		</h:dataTable>
+	</ui:define>
+	
+</ui:composition>

@@ -1,11 +1,13 @@
 package org.oscarehr.caisi_integrator.dao;
 
 import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
 import org.apache.commons.lang.StringUtils;
 import org.apache.openjpa.persistence.jdbc.Index;
 
@@ -40,7 +42,7 @@ public class CachedEformData extends AbstractModel<FacilityIdIntegerCompositePk>
 	@Temporal(TemporalType.TIME)
 	private Date formTime = null;
 
-	@Column(columnDefinition = "text")
+	@Column(columnDefinition = "longtext")
 	private String formData = null;
 
 	public FacilityIdIntegerCompositePk getFacilityIdIntegerCompositePk()

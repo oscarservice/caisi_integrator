@@ -1,0 +1,20 @@
+<ui:composition template="/resources/components/html_layout.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:util="http://java.sun.com/jsf/composite/components"
+	xmlns:caisi="http://caisi.ca/mytags">
+	
+	<ui:define name="body">
+	
+		<h3>Reports</h3>
+	
+		<ul>
+			<li><a href="#{request.contextPath}/site/reports/issue_report_form.jsf">Issue Report</a></li>
+			<li><a href="#{request.contextPath}/site/reports/homeless_population_report_summary_of_results.jsf">Homeless Population Reports</a></li>
+			<li><a href="#{request.contextPath}/site/reports/homeless_population_report_configuration.jsf">Homeless Population Report Configuration</a></li>
+		</ul>
+	</ui:define>
+	
+</ui:composition>

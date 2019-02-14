@@ -1,0 +1,3 @@
+workingDir=/tmp
+scanDirectory = /var/lib/OscarDocument/oscar_integrator/document
+archiveDirectory = /var/lib/OscarDocument/oscar_integrator/document/archive

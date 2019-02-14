@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <server>
 	<misc>
-		<build_date_time>2017-01-11 10:18 AM</build_date_time>
+		<build_date_time>2017-11-06 12:09 PM</build_date_time>
 		<vmstat_logging_period>900000</vmstat_logging_period>
 		<override_config_sytem_property_key>caisi_integrator_config</override_config_sytem_property_key>
 	</misc>
 	<database>
-		<user>dbuser</user>
-		<password>dbpassword</password>
+		<user>oscar</user>
+		<password>oscar</password>
 		<url_prefix>jdbc:mysql://127.0.0.1:3306/</url_prefix>
-		<schema>caisi_integrator</schema>
+		<schema>integrator</schema>
 		<driver>com.mysql.jdbc.Driver</driver>
 	</database>
 	<integrator_server>
@@ -30,4 +30,9 @@
 		<public_key></public_key>
 		<private_key></private_key>
 	</recaptcha>
+	<import>
+		<scanDirectory>/opt/integrator/</scanDirectory>
+		<archiveDirectory>/opt/integrator/archive</archiveDirectory>
+		<workingDir>/tmp</workingDir>
+	</import>
 </server>

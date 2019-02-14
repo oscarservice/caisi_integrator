@@ -7,6 +7,7 @@ import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
 import org.apache.commons.lang.StringUtils;
 import org.apache.openjpa.persistence.jdbc.Index;
 
@@ -16,7 +17,7 @@ public class CachedMeasurement extends AbstractModel<FacilityIdIntegerCompositeP
 	@EmbeddedId
 	private FacilityIdIntegerCompositePk facilityMeasurementPk;
 
-	@Column(nullable = false, length = 4)
+	@Column(nullable = false, length = 50)
 	private String type = null;
 
 	@Column(nullable = false)

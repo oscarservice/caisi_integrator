@@ -16,6 +16,8 @@ import org.oscarehr.caisi_integrator.dao.ProviderCommunication;
 import org.oscarehr.caisi_integrator.dao.ProviderCommunicationDao;
 import org.oscarehr.caisi_integrator.util.MiscUtils;
 import org.oscarehr.caisi_integrator.util.Role;
+import org.oscarehr.caisi_integrator.ws.transfer.ProviderCommunicationTransfer;
+import org.oscarehr.caisi_integrator.ws.transfer.ProviderTransfer;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

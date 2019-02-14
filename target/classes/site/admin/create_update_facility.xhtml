@@ -1,0 +1,84 @@
+<ui:composition template="/resources/components/html_layout.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:util="http://java.sun.com/jsf/composite/components"
+	xmlns:caisi="http://caisi.ca/mytags">
+	
+	<f:metadata>
+		<f:viewParam name="facilityId" value="#{createUpdateFacilityJsfBean.facilityId}" />       
+	</f:metadata>
+	
+	<ui:define name="body">	
+
+		<h:outputScript>
+			function validate(form)
+			{				
+				var tempField=document.getElementById(form.name+':name');
+				var nameData=tempField.value;
+				if (nameData==null||nameData=="")
+				{
+					alert('A name is required.');
+					return(false);
+				}
+				
+				tempField=document.getElementById(form.name+':password');
+				var passwordData=tempField.value;
+				// to check if it's an update or new, new requires passwords, updates can leave as null.
+				var isNew=#{createUpdateFacilityJsfBean.isNew};
+				if (isNew &amp;&amp; (passwordData==null||passwordData==""))
+				{
+					alert('Please provide a password.');
+					return(false);
+				}
+							
+				tempField=document.getElementById(form.name+':passwordConfirm');
+				var passwordConfirmData=tempField.value;
+				if (passwordData != passwordConfirmData) 
+				{
+					alert('Please re-enter your password, the two passwords you entered are not the same.');
+					return(false);
+				}
+  										
+				return(true);
+			}
+		</h:outputScript>
+
+		<h:form onsubmit="return(validate(this))">		
+			<table class="roundedCollapsedTable">
+				<tr>
+					<td colspan="2" class="roundedTableHeader">#{createUpdateFacilityJsfBean.createUpdateTitle}</td>
+				</tr>
+				<tr>
+					<td class="fieldLabel" style="padding-top:12px">Id</td>
+					<td>#{createUpdateFacilityJsfBean.facility.id}</td>
+				</tr>
+				<tr>
+					<td class="fieldLabel">Name</td>
+					<td><h:inputText id="name" value="#{createUpdateFacilityJsfBean.facility.name}" /></td>
+				</tr>
+				<tr>
+					<td class="fieldLabel">Password</td>
+					<td><h:inputSecret id="password" value="#{createUpdateFacilityJsfBean.facility.password}" /></td>
+				</tr>
+				<tr>
+					<td class="fieldLabel">Confirm Password</td>
+					<td><h:inputSecret id="passwordConfirm" value="#{createUpdateFacilityJsfBean.facility.password}" /></td>
+				</tr>
+				<tr>
+					<td class="fieldLabel">Disable Account</td>
+					<td><h:selectBooleanCheckbox value="#{createUpdateFacilityJsfBean.facility.disabled}"></h:selectBooleanCheckbox></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td style="text-align:center;padding-top:12px;padding-bottom:8px">			
+						<h:commandButton value="Save" action="#{createUpdateFacilityJsfBean.save}" />
+						<h:button value="Cancel" outcome="view_facilities.jsf" />
+					</td>
+				</tr>
+			</table>
+		</h:form>
+	</ui:define>
+	
+</ui:composition>

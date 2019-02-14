@@ -16,103 +16,103 @@ public class CachedDemographicDrug extends AbstractModel<FacilityIdIntegerCompos
 	@EmbeddedId
 	private FacilityIdIntegerCompositePk facilityIdIntegerCompositePk;
 
-	@Column(nullable=false, length=16)
-	private String caisiProviderId=null;
+	@Column(nullable = false, length = 16)
+	private String caisiProviderId = null;
 
-	@Column(nullable=false)
+	@Column(nullable = false)
 	@Index
-	private Integer caisiDemographicId=null;
-	
+	private Integer caisiDemographicId = null;
+
 	@Temporal(TemporalType.DATE)
-	private Date rxDate=null;
-	
+	private Date rxDate = null;
+
 	@Temporal(TemporalType.DATE)
-	private Date endDate=null;
+	private Date endDate = null;
 
-	@Column(length=255)
-	private String brandName=null;
-	
-	@Column(length=255)
-	private String customName=null;
-	private float takeMin=0;
-	private float takeMax=0;
+	@Column(length = 255)
+	private String brandName = null;
 
-	@Column(length=64)
-	private String freqCode=null;
+	@Column(length = 255)
+	private String customName = null;
+	private float takeMin = 0;
+	private float takeMax = 0;
 
-	@Column(length=64)
-	private String duration=null;
+	@Column(length = 64)
+	private String freqCode = null;
 
-	@Column(length=64)
-	private String durUnit=null;
+	@Column(length = 64)
+	private String duration = null;
 
-	@Column(length=64)
-	private String quantity=null;
-	private int repeats=0;
-	
+	@Column(length = 64)
+	private String durUnit = null;
+
+	@Column(length = 64)
+	private String quantity = null;
+	private int repeats = 0;
+
 	@Temporal(TemporalType.DATE)
-	private Date lastRefillDate=null;
+	private Date lastRefillDate = null;
 
-	@Column(columnDefinition="tinyint(1)")
+	@Column(columnDefinition = "tinyint(1)")
 	private boolean noSubs;
 
-	@Column(columnDefinition="tinyint(1)")
+	@Column(columnDefinition = "tinyint(1)")
 	private boolean prn;
 
-	@Column(columnDefinition="text")
-	private String special=null;
+	@Column(columnDefinition = "text")
+	private String special = null;
 
-	@Column(columnDefinition="tinyint(1)")
+	@Column(columnDefinition = "tinyint(1)")
 	private boolean archived;
 
-	@Column(length=100)
+	@Column(length = 100)
 	private String archivedReason;
 
-        @Temporal(TemporalType.TIMESTAMP)
-        private Date archivedDate;
-
-	@Column(length=255)
-	private String genericName=null;
-	
-	@Column(length=64)
-	private String atc=null;
-
-	private int scriptNo=0;
-
-	@Column(length=64)
-	private String regionalIdentifier=null;
-
-	@Column(length=64)
-	private String unit=null;
-
-	@Column(length=64)
-	private String method=null;
-
-	@Column(length=64)
-	private String route=null;
-
-	@Column(length=64)
-	private String drugForm=null;
-	
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date createDate=null;
+	private Date archivedDate;
 
-	@Column(columnDefinition="text")
-	private String dosage=null;
+	@Column(length = 255)
+	private String genericName = null;
 
-	@Column(columnDefinition="tinyint(1)")
+	@Column(length = 64)
+	private String atc = null;
+
+	private int scriptNo = 0;
+
+	@Column(length = 64)
+	private String regionalIdentifier = null;
+
+	@Column(length = 64)
+	private String unit = null;
+
+	@Column(length = 64)
+	private String method = null;
+
+	@Column(length = 64)
+	private String route = null;
+
+	@Column(length = 64)
+	private String drugForm = null;
+
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date createDate = null;
+
+	@Column(columnDefinition = "text")
+	private String dosage = null;
+
+	@Column(columnDefinition = "tinyint(1)")
 	private boolean customInstructions;
-	
-	@Column(length=32)
-	private String unitName=null;
 
-	@Column(columnDefinition="tinyint(1)")
+	@Column(length = 50)
+	private String unitName = null;
+
+	@Column(columnDefinition = "tinyint(1)")
 	private Boolean longTerm;
 
-	@Column(columnDefinition="tinyint(1)")
+	@Column(columnDefinition = "tinyint(1)")
 	private Boolean pastMed;
 
-	@Column(columnDefinition="tinyint(1)")
+	@Column(columnDefinition = "tinyint(1)")
 	private Boolean patientCompliance;
 
 	@Override
@@ -128,7 +128,7 @@ public class CachedDemographicDrug extends AbstractModel<FacilityIdIntegerCompos
 
 	public void setFacilityIdIntegerCompositePk(FacilityIdIntegerCompositePk facilityIdIntegerCompositePk)
 	{
-		this.facilityIdIntegerCompositePk=facilityIdIntegerCompositePk;
+		this.facilityIdIntegerCompositePk = facilityIdIntegerCompositePk;
 	}
 
 	public String getCaisiProviderId()
@@ -138,7 +138,7 @@ public class CachedDemographicDrug extends AbstractModel<FacilityIdIntegerCompos
 
 	public void setCaisiProviderId(String caisiProviderId)
 	{
-		this.caisiProviderId=caisiProviderId;
+		this.caisiProviderId = caisiProviderId;
 	}
 
 	public Integer getCaisiDemographicId()
@@ -148,7 +148,7 @@ public class CachedDemographicDrug extends AbstractModel<FacilityIdIntegerCompos
 
 	public void setCaisiDemographicId(Integer caisiDemographicId)
 	{
-		this.caisiDemographicId=caisiDemographicId;
+		this.caisiDemographicId = caisiDemographicId;
 	}
 
 	public Date getRxDate()
@@ -158,7 +158,7 @@ public class CachedDemographicDrug extends AbstractModel<FacilityIdIntegerCompos
 
 	public void setRxDate(Date rxDate)
 	{
-		this.rxDate=rxDate;
+		this.rxDate = rxDate;
 	}
 
 	public Date getEndDate()
@@ -168,7 +168,7 @@ public class CachedDemographicDrug extends AbstractModel<FacilityIdIntegerCompos
 
 	public void setEndDate(Date endDate)
 	{
-		this.endDate=endDate;
+		this.endDate = endDate;
 	}
 
 	public String getBrandName()
@@ -178,7 +178,7 @@ public class CachedDemographicDrug extends AbstractModel<FacilityIdIntegerCompos
 
 	public void setBrandName(String brandName)
 	{
-		this.brandName=brandName;
+		this.brandName = brandName;
 	}
 
 	public String getCustomName()
@@ -188,7 +188,7 @@ public class CachedDemographicDrug extends AbstractModel<FacilityIdIntegerCompos
 
 	public void setCustomName(String customName)
 	{
-		this.customName=customName;
+		this.customName = customName;
 	}
 
 	public float getTakeMin()
@@ -198,7 +198,7 @@ public class CachedDemographicDrug extends AbstractModel<FacilityIdIntegerCompos
 
 	public void setTakeMin(float takeMin)
 	{
-		this.takeMin=takeMin;
+		this.takeMin = takeMin;
 	}
 
 	public float getTakeMax()
@@ -208,7 +208,7 @@ public class CachedDemographicDrug extends AbstractModel<FacilityIdIntegerCompos
 
 	public void setTakeMax(float takeMax)
 	{
-		this.takeMax=takeMax;
+		this.takeMax = takeMax;
 	}
 
 	public String getFreqCode()
@@ -218,7 +218,7 @@ public class CachedDemographicDrug extends AbstractModel<FacilityIdIntegerCompos
 
 	public void setFreqCode(String freqCode)
 	{
-		this.freqCode=freqCode;
+		this.freqCode = freqCode;
 	}
 
 	public String getDuration()
@@ -228,7 +228,7 @@ public class CachedDemographicDrug extends AbstractModel<FacilityIdIntegerCompos
 
 	public void setDuration(String duration)
 	{
-		this.duration=duration;
+		this.duration = duration;
 	}
 
 	public String getDurUnit()
@@ -238,7 +238,7 @@ public class CachedDemographicDrug extends AbstractModel<FacilityIdIntegerCompos
 
 	public void setDurUnit(String durUnit)
 	{
-		this.durUnit=durUnit;
+		this.durUnit = durUnit;
 	}
 
 	public String getQuantity()
@@ -248,7 +248,7 @@ public class CachedDemographicDrug extends AbstractModel<FacilityIdIntegerCompos
 
 	public void setQuantity(String quantity)
 	{
-		this.quantity=quantity;
+		this.quantity = quantity;
 	}
 
 	public int getRepeats()
@@ -258,7 +258,7 @@ public class CachedDemographicDrug extends AbstractModel<FacilityIdIntegerCompos
 
 	public void setRepeats(int repeats)
 	{
-		this.repeats=repeats;
+		this.repeats = repeats;
 	}
 
 	public Date getLastRefillDate()
@@ -268,7 +268,7 @@ public class CachedDemographicDrug extends AbstractModel<FacilityIdIntegerCompos
 
 	public void setLastRefillDate(Date lastRefillDate)
 	{
-		this.lastRefillDate=lastRefillDate;
+		this.lastRefillDate = lastRefillDate;
 	}
 
 	public boolean isNoSubs()
@@ -278,7 +278,7 @@ public class CachedDemographicDrug extends AbstractModel<FacilityIdIntegerCompos
 
 	public void setNoSubs(boolean noSubs)
 	{
-		this.noSubs=noSubs;
+		this.noSubs = noSubs;
 	}
 
 	public boolean isPrn()
@@ -288,7 +288,7 @@ public class CachedDemographicDrug extends AbstractModel<FacilityIdIntegerCompos
 
 	public void setPrn(boolean prn)
 	{
-		this.prn=prn;
+		this.prn = prn;
 	}
 
 	public String getSpecial()
@@ -298,7 +298,7 @@ public class CachedDemographicDrug extends AbstractModel<FacilityIdIntegerCompos
 
 	public void setSpecial(String special)
 	{
-		this.special=special;
+		this.special = special;
 	}
 
 	public boolean isArchived()
@@ -308,28 +308,28 @@ public class CachedDemographicDrug extends AbstractModel<FacilityIdIntegerCompos
 
 	public void setArchived(boolean archived)
 	{
-		this.archived=archived;
+		this.archived = archived;
 	}
 
-        public String getArchivedReason()
-        {
-                return archivedReason;
-        }
+	public String getArchivedReason()
+	{
+		return archivedReason;
+	}
 
-        public void setArchivedReason(String archivedReason)
-        {
-                this.archivedReason = archivedReason;
-        }
+	public void setArchivedReason(String archivedReason)
+	{
+		this.archivedReason = archivedReason;
+	}
 
-        public Date getArchivedDate()
-        {
-                return archivedDate;
-        }
+	public Date getArchivedDate()
+	{
+		return archivedDate;
+	}
 
-        public void setArchivedDate(Date archivedDate)
-        {
-                this.archivedDate = archivedDate;
-        }
+	public void setArchivedDate(Date archivedDate)
+	{
+		this.archivedDate = archivedDate;
+	}
 
 	public String getGenericName()
 	{
@@ -338,7 +338,7 @@ public class CachedDemographicDrug extends AbstractModel<FacilityIdIntegerCompos
 
 	public void setGenericName(String genericName)
 	{
-		this.genericName=genericName;
+		this.genericName = genericName;
 	}
 
 	public String getAtc()
@@ -348,7 +348,7 @@ public class CachedDemographicDrug extends AbstractModel<FacilityIdIntegerCompos
 
 	public void setAtc(String atc)
 	{
-		this.atc=atc;
+		this.atc = atc;
 	}
 
 	public int getScriptNo()
@@ -358,7 +358,7 @@ public class CachedDemographicDrug extends AbstractModel<FacilityIdIntegerCompos
 
 	public void setScriptNo(int scriptNo)
 	{
-		this.scriptNo=scriptNo;
+		this.scriptNo = scriptNo;
 	}
 
 	public String getRegionalIdentifier()
@@ -368,7 +368,7 @@ public class CachedDemographicDrug extends AbstractModel<FacilityIdIntegerCompos
 
 	public void setRegionalIdentifier(String regionalIdentifier)
 	{
-		this.regionalIdentifier=regionalIdentifier;
+		this.regionalIdentifier = regionalIdentifier;
 	}
 
 	public String getUnit()
@@ -378,7 +378,7 @@ public class CachedDemographicDrug extends AbstractModel<FacilityIdIntegerCompos
 
 	public void setUnit(String unit)
 	{
-		this.unit=unit;
+		this.unit = unit;
 	}
 
 	public String getMethod()
@@ -388,7 +388,7 @@ public class CachedDemographicDrug extends AbstractModel<FacilityIdIntegerCompos
 
 	public void setMethod(String method)
 	{
-		this.method=method;
+		this.method = method;
 	}
 
 	public String getRoute()
@@ -398,7 +398,7 @@ public class CachedDemographicDrug extends AbstractModel<FacilityIdIntegerCompos
 
 	public void setRoute(String route)
 	{
-		this.route=route;
+		this.route = route;
 	}
 
 	public String getDrugForm()
@@ -408,7 +408,7 @@ public class CachedDemographicDrug extends AbstractModel<FacilityIdIntegerCompos
 
 	public void setDrugForm(String drugForm)
 	{
-		this.drugForm=drugForm;
+		this.drugForm = drugForm;
 	}
 
 	public Date getCreateDate()
@@ -418,7 +418,7 @@ public class CachedDemographicDrug extends AbstractModel<FacilityIdIntegerCompos
 
 	public void setCreateDate(Date createDate)
 	{
-		this.createDate=createDate;
+		this.createDate = createDate;
 	}
 
 	public String getDosage()
@@ -428,7 +428,7 @@ public class CachedDemographicDrug extends AbstractModel<FacilityIdIntegerCompos
 
 	public void setDosage(String dosage)
 	{
-		this.dosage=dosage;
+		this.dosage = dosage;
 	}
 
 	public boolean isCustomInstructions()
@@ -438,7 +438,7 @@ public class CachedDemographicDrug extends AbstractModel<FacilityIdIntegerCompos
 
 	public void setCustomInstructions(boolean customInstructions)
 	{
-		this.customInstructions=customInstructions;
+		this.customInstructions = customInstructions;
 	}
 
 	public String getUnitName()
@@ -448,7 +448,7 @@ public class CachedDemographicDrug extends AbstractModel<FacilityIdIntegerCompos
 
 	public void setUnitName(String unitName)
 	{
-		this.unitName=unitName;
+		this.unitName = unitName;
 	}
 
 	public Boolean getLongTerm()
@@ -458,7 +458,7 @@ public class CachedDemographicDrug extends AbstractModel<FacilityIdIntegerCompos
 
 	public void setLongTerm(Boolean longTerm)
 	{
-		this.longTerm=longTerm;
+		this.longTerm = longTerm;
 	}
 
 	public Boolean getPastMed()
@@ -468,7 +468,7 @@ public class CachedDemographicDrug extends AbstractModel<FacilityIdIntegerCompos
 
 	public void setPastMed(Boolean pastMed)
 	{
-		this.pastMed=pastMed;
+		this.pastMed = pastMed;
 	}
 
 	public Boolean getPatientCompliance()
@@ -478,6 +478,6 @@ public class CachedDemographicDrug extends AbstractModel<FacilityIdIntegerCompos
 
 	public void setPatientCompliance(Boolean patientCompliance)
 	{
-		this.patientCompliance=patientCompliance;
+		this.patientCompliance = patientCompliance;
 	}
 }
